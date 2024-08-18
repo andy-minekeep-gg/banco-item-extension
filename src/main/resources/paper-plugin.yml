@@ -1,0 +1,14 @@
+name: banco-extension-example
+authors:
+  - myth-MC
+  - U8092
+version: '${project.version}'
+api-version: '1.20'
+
+main: ovh.mythmc.banco_extension_example.BancoExtensionExample
+
+dependencies:
+  server:
+    banco:
+      load: BEFORE
+      required: true
