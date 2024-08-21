@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ovh.mythmc</groupId>
-    <artifactId>banco-extension-example</artifactId>
+    <artifactId>banco-extension-template</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -36,7 +36,7 @@
 
         <dependency>
             <groupId>com.github.myth-MC.banco</groupId>
-            <artifactId>banco-api</artifactId>
+            <artifactId>banco-api-bukkit</artifactId>
             <version>dev~0.6-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
