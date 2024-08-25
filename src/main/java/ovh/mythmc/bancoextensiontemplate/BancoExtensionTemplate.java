@@ -16,13 +16,13 @@ public class BancoExtensionTemplate extends JavaPlugin {
         Banco.get().getEventManager().registerListener(exampleListener);
 
         exampleInventory = new ExampleInventory();
-        Banco.get().getInventoryManager().registerInventory(exampleInventory);
+        Banco.get().getStorageManager().registerStorage(exampleInventory);
     }
 
     @Override
     public void onDisable() {
         Banco.get().getEventManager().unregisterListener(exampleListener);
-        Banco.get().getInventoryManager().unregisterInventory(exampleInventory);
+        Banco.get().getStorageManager().unregisterStorage(exampleInventory);
     }
 
 }
