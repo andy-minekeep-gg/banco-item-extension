@@ -2,27 +2,46 @@ package ovh.mythmc.bancoextensiontemplate;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import ovh.mythmc.banco.api.Banco;
-import ovh.mythmc.bancoextensiontemplate.inventories.ExampleInventory;
-import ovh.mythmc.bancoextensiontemplate.listeners.ExampleListener;
+import ovh.mythmc.banco.api.callback.transaction.BancoTransactionProcessCallback;
+import ovh.mythmc.bancoextensiontemplate.inventory.ExampleInventory;
 
 public class BancoExtensionTemplate extends JavaPlugin {
 
-    private ExampleListener exampleListener;
+    public static final String CALLBACK_IDENTIFIER = "banco-extension-template:example";
+
     private ExampleInventory exampleInventory;
 
     @Override
     public void onEnable() {
-        exampleListener = new ExampleListener();
-        Banco.get().getEventManager().registerListener(exampleListener);
+        // Register example listeners
+        registerListeners();
 
+        // Register example inventory
         exampleInventory = new ExampleInventory();
-        Banco.get().getStorageManager().registerStorage(exampleInventory);
+        Banco.get().getStorageRegistry().registerStorage(exampleInventory);
     }
 
     @Override
     public void onDisable() {
-        Banco.get().getEventManager().unregisterListener(exampleListener);
-        Banco.get().getStorageManager().unregisterStorage(exampleInventory);
+        // Unregister example listeners
+        unregisterListeners();
+
+        // Unregister example inventory
+        Banco.get().getStorageRegistry().unregisterStorage(exampleInventory);
+    }
+
+    private void registerListeners() {
+        final var instance = BancoTransactionProcessCallback.INSTANCE;
+
+        instance.registerListener(CALLBACK_IDENTIFIER, (transaction, cancelled) -> {
+            getLogger().info("Transaction " + transaction.toString() + " has been processed!");
+        });
+    }
+
+    private void unregisterListeners() {
+        final var instance = BancoTransactionProcessCallback.INSTANCE;
+
+        instance.unregisterListeners(CALLBACK_IDENTIFIER);
     }
 
 }
