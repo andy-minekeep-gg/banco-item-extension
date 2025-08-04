@@ -18,4 +18,4 @@ Here's what's added
 - `/banco_item reload` to reload the plugin's items, re-registering them
 
 > [!WARNING]
-> Please please please please do `/banco_item reload` when you do `/banco reload`, as item registered by this extension may be wiped by the reload.
+> Please please please please do `/banco_item reload` after you do `/banco reload`, as item registered by this extension may be wiped by the reload.
