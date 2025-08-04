@@ -1,14 +1,20 @@
-name: banco-extension-template
+name: banco-cached-item-extension
 authors:
-  - myth-MC
-  - U8092
-version: 1.0.0
+  - myth-MC (template)
+  - U8092 (template)
+  - Comfortable_Andy
+version: 0.0.1-alpha
 api-version: '1.20'
 
-main: ovh.mythmc.bancoextensiontemplate.BancoExtensionTemplate
+main: comfortable_andy.banco_cached_item_extension.BancoCachedItemExtension
 
 dependencies:
   server:
     banco:
       load: BEFORE
       required: true
+
+permissions:
+  banco-item.admin:
+    default: op
+    description: Access to the commands. That's it. Really. That's it.
