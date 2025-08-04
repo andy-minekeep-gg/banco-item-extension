@@ -1,10 +1,6 @@
 <div align="center">
   <p>
-    <h1>banco</h1>
-    <a href="https://github.com/myth-MC/banco/releases/latest"><img src="https://img.shields.io/github/v/release/myth-MC/banco" alt="Latest release" /></a>
-    <a href="https://github.com/myth-MC/banco/pulls"><img src="https://img.shields.io/github/issues-pr/myth-MC/banco" alt="Pull requests" /></a>
-    <a href="https://github.com/myth-MC/banco/issues"><img src="https://img.shields.io/github/issues/myth-MC/banco" alt="Issues" /></a>
-    <a href="https://github.com/myth-MC/banco/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-blue.svg" alt="License" /></a>
+    <h1>banco Item Extension</h1>
   </p>
 </div>
 
@@ -12,10 +8,14 @@
 
 ## 📚 Information
 
-> This is a template project that showcases banco's API capabilities for developers looking into implementing native **banco** support.
+> This is a banco extension based off of the banco template project.
 
-Here's some examples of what banco-api can do:
-- Interact directly with economy without having to rely on Vault
-- [Register new inventories](https://github.com/myth-MC/banco-extension-template/blob/main/src/main/java/ovh/mythmc/bancoextensiontemplate/inventories/ExampleInventory.java)
-- Register new items
-- [Listen to banco-related events](https://github.com/myth-MC/banco-extension-template/blob/main/src/main/java/ovh/mythmc/bancoextensiontemplate/listeners/ExampleListener.java) (transactions, new accounts, registered items...)
+Here's what's added
+- The `/banco_item` suite of commands
+- `/banco_item set <id> <worth> (<item in command form, if console>)` to add and register a new item
+- `/banco_item remove <id>` to remove and unregister an existing item
+- Items are saved in `items.yml` in readable format in the plugin's data folder
+- `/banco_item reload` to reload the plugin's items, re-registering them
+
+> [!WARNING]
+> Please please please please do `/banco_item reload` when you do `/banco reload`, as item registered by this extension may be wiped by the reload.
