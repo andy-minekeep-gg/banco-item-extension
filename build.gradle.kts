@@ -26,7 +26,7 @@ dependencies {
     compileOnly("ovh.mythmc:callbacks-lib:0.1.2")
 }
 
-group = "ovh.mythmc"
+group = "comfortable_andy"
 version = "1.0.0"
 description = "banco-cached-item-extension"
 java.sourceCompatibility = JavaVersion.VERSION_17

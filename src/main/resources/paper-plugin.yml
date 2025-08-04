@@ -3,7 +3,7 @@ authors:
   - myth-MC (template)
   - U8092 (template)
   - Comfortable_Andy
-version: 0.0.1-alpha
+version: 1.0.0
 api-version: '1.20'
 
 main: comfortable_andy.banco_cached_item_extension.BancoCachedItemExtension
